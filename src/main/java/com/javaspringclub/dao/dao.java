@@ -51,25 +51,24 @@ public class dao {
 	
 	@Transactional
 	@SuppressWarnings("unchecked")
-	public   ResponseEntity<Product> findPoduct(String code){
+	public  Product findPoduct(String code){
 	
 		RestTemplate restTemplate = new RestTemplate();
-	     
+		ResponseEntity<Product> result = null ;
 	    final String baseUrl = "http://localhost:8091/products/1111";
 	    URI uri = null;
 		try {
 			uri = new URI(baseUrl);
+			
+			  result = restTemplate.getForEntity(uri, Product.class);
+			
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	 
-	    ResponseEntity<Product> result = restTemplate.getForEntity(uri, Product.class);
+	
 		
-		
-		
-		
-	return  result ;
+	return  result.getBody() ;
 		
 	}
 }

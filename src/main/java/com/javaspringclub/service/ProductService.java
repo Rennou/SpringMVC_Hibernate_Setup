@@ -35,7 +35,7 @@ public class ProductService {
 		
 	}
 	
-	public  ResponseEntity<Product>  findProduct(String code ){
+	public  Product findProduct(String code ){
 		
 		return daoP.findPoduct(code);
 			

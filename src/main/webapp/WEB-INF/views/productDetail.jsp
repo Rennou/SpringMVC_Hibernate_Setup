@@ -12,7 +12,7 @@
 <body>
 
 
-        <form:form method="" modelAttribute="product">
+        <form:form  modelAttribute="product">
         <form:hidden path="3code" /> 
              <table>
                 <tr>

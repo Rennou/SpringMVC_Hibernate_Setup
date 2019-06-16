@@ -50,6 +50,9 @@ public class ProductControleur {
 	{
 		ModelAndView v = new ModelAndView();
 		
+		Product p = s.findProduct(id);
+		
+		System.out.println(p);
 		v.addObject("product",s.findProduct(id)) ;
 		v.setViewName("productDetail");
           return v ;
